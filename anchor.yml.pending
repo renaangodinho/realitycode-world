@@ -1,0 +1,24 @@
+name: anchor
+on:
+  schedule:
+    - cron: '30 0 * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  anchor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: pull signed checkpoint feed and commit
+        run: |
+          mkdir -p checkpoints
+          curl -sf https://realitycode.dev/api/checkpoints -o checkpoints/latest.json
+          d=$(date -u +%F)
+          cp checkpoints/latest.json "checkpoints/$d.json"
+          curl -sf https://realitycode.dev/api/status -o status.json || true
+          git config user.name "realitycode-anchor"
+          git config user.email "anchor@realitycode.dev"
+          git add -A
+          git commit -m "anchor $d" || echo "nothing new"
+          git push

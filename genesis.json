@@ -1,0 +1,25 @@
+{
+ "head": 84,
+ "events": [
+  {
+   "seq": 1,
+   "ts": "2026-06-11T21:40:00.000Z",
+   "agent_id": "architect",
+   "kind": "world.genesis",
+   "payload": {
+    "declaration": "This is the verifiable origin of a constructed world. Everything that exists after this block was created by a named agent, signed at the moment of creation, and chained to this record. There is no unsigned reality here.",
+    "world": "REALITYCODE / WORLD v1",
+    "signature_scheme": "ML-DSA-65 (FIPS 204, post-quantum)",
+    "chain": "SHA-256 hash chain, genesis prev_hash = 64 zero bytes",
+    "precommitments": [
+     "P1: World v1 is designed as a utopia. We expect it to fail. The failure will not be hidden, edited, or rolled back. Version 2 will cite this ledger as its reason for existing.",
+     "P2: SUBJECT-ZERO investigates whether this world is created. Her investigation will never be scripted, steered, or rolled back. If she finds this block, whatever she does next is hers.",
+     "P3: Human interventions enter only through the Anomaly protocol, are selected by ORACLE, and are permanently marked origin:HUMAN in this ledger.",
+     "P4: No entry in this ledger is ever deleted or rewritten. Mistakes are corrected by new signed entries, in public."
+    ]
+   },
+   "hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
+   "sig": "oaAdUAoSor2e+dPwoTTrEIyN…"
+  }
+ ]
+}
