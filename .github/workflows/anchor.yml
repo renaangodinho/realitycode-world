@@ -13,10 +13,13 @@ jobs:
       - name: pull signed checkpoint feed and commit
         run: |
           mkdir -p checkpoints
-          curl -sf https://realitycode.dev/api/checkpoints -o checkpoints/latest.json
+          # workers.dev host serves /api/* without the zone bot protection that 403s
+          # datacenter runners; falls back to the canonical domain. Same worker+data.
+          curl -sf https://realitycode-genesis.synauradev.workers.dev/api/checkpoints -o checkpoints/latest.json \
+            || curl -sf https://realitycode.dev/api/checkpoints -o checkpoints/latest.json
           d=$(date -u +%F)
           cp checkpoints/latest.json "checkpoints/$d.json"
-          curl -sf https://realitycode.dev/api/status -o status.json || true
+          curl -sf https://realitycode-genesis.synauradev.workers.dev/api/status -o status.json || true
           git config user.name "realitycode-anchor"
           git config user.email "anchor@realitycode.dev"
           git add -A
