@@ -1,0 +1,29 @@
+name: health
+# Probes the world's voice + liveness every 30 min. A FAILED run emails the repo
+# owner (default GitHub notification) — this is the alarm that was missing during
+# the 17-day flat-voice outage of June 2026.
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: probe voice + liveness
+        run: |
+          s=$(curl -sf https://realitycode-genesis.synauradev.workers.dev/api/status) || { echo "::error::status endpoint unreachable"; exit 1; }
+          echo "$s" | jq '{state, height, last_act_ts, voice}'
+          state=$(echo "$s" | jq -r .state)
+          last=$(echo "$s" | jq -r .last_act_ts)
+          canned=$(echo "$s" | jq -r '.voice.canned_of_last_60 // 0')
+          prov=$(echo "$s" | jq -r '.voice.last_provider // "none"')
+          err=$(echo "$s" | jq -r '.voice.last_error // ""')
+          now=$(date -u +%s)
+          lastep=$(date -u -d "$last" +%s 2>/dev/null || echo 0)
+          age=$(( now - lastep ))
+          [ "$state" = "live" ] || { echo "::error::state=$state"; exit 1; }
+          [ "$age" -lt 600 ] || { echo "::error::world STALLED — last act ${age}s ago"; exit 1; }
+          [ "$canned" -le 20 ] || { echo "::error::voice DEGRADED — canned share $canned/60 (last_error: $err)"; exit 1; }
+          case "$prov" in deterministic*) echo "::error::voice=deterministic (canned engine)"; exit 1;; esac
+          echo "OK: voice=$prov canned=$canned/60 age=${age}s"

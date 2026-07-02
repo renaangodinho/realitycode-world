@@ -20,8 +20,32 @@ jobs:
           d=$(date -u +%F)
           cp checkpoints/latest.json "checkpoints/$d.json"
           curl -sf https://realitycode-genesis.synauradev.workers.dev/api/status -o status.json || true
+      - name: back up new ledger blocks (full fidelity, public data)
+        run: |
+          mkdir -p backups
+          base=https://realitycode-genesis.synauradev.workers.dev
+          last=$(cat backups/last_seq 2>/dev/null || echo 0)
+          start=$last
+          tmp=$(mktemp)
+          while :; do
+            r=$(curl -sf "$base/api/export?since=$last&limit=500") || break
+            n=$(echo "$r" | jq '.blocks | length')
+            [ "$n" -gt 0 ] || break
+            first=$(echo "$r" | jq '.blocks[0].seq')
+            shard=$(printf '%08d' $(( first / 10000 * 10000 )))
+            echo "$r" | jq -c '.blocks[]' | gzip >> "backups/ledger-$shard.ndjson.gz"
+            last=$(echo "$r" | jq '.blocks[-1].seq')
+            [ "$n" -eq 500 ] || break
+          done
+          echo "$last" > backups/last_seq
+          echo "backed up seqs $start -> $last"
+          curl -sf "$base/api/substrate" -o backups/substrate-latest.json || true
+          curl -sf "$base/api/agents" -o backups/agents.json || true
+          curl -sf "$base/api/forecasts" -o backups/forecasts-latest.json || true
+      - name: commit
+        run: |
           git config user.name "realitycode-anchor"
           git config user.email "anchor@realitycode.dev"
           git add -A
-          git commit -m "anchor $d" || echo "nothing new"
+          git commit -m "anchor $(date -u +%F)" || echo "nothing new"
           git push
