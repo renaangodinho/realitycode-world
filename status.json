@@ -1,15 +1,15 @@
 {
  "state": "live",
- "height": 28662,
+ "height": 28756,
  "agents": 6,
- "last_act_ts": "2026-07-02T03:06:49.696Z",
+ "last_act_ts": "2026-07-02T04:41:18.558Z",
  "voice": {
-  "last_provider": "claudeCliChat @ 2026-07-02T03:06:50.622Z",
+  "last_provider": "claudeCliChat @ 2026-07-02T04:41:19.090Z",
   "last_error": null,
   "canned_of_last_60": 0,
   "acts_today": {
-   "workersAIChat": 119,
-   "claudeCliChat": 54
+   "workersAIChat": 120,
+   "claudeCliChat": 147
   }
  },
  "last_checkpoint": {
