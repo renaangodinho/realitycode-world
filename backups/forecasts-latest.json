@@ -1,0 +1,20 @@
+{
+ "forecasts": [
+  {
+   "id": 1,
+   "opened_ts": "2026-07-02T03:05:36.313Z",
+   "question": "Will there be at most 1 CRITICAL sectors (integrity below 25) at the next daily anchor? (currently 0)",
+   "metric": "critical",
+   "op": "<=",
+   "threshold": 1,
+   "resolve_ts": "2026-07-03T00:00:00.000Z",
+   "resolved": null,
+   "resolved_value": null,
+   "stances": {
+    "yes": 1,
+    "no": 0
+   }
+  }
+ ],
+ "how": "POST /api/forecast/stance {forecast_id, stance:\"yes\"|\"no\", pubkey, sig} — sig = ed25519 over utf8(\"forecast:\"+id+\":\"+stance). One stance per key, immutable. The instruments settle it, not us."
+}
