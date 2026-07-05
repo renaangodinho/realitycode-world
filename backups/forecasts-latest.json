@@ -1,6 +1,21 @@
 {
  "forecasts": [
   {
+   "id": 3,
+   "opened_ts": "2026-07-05T00:01:08.271Z",
+   "question": "Will there be at most 61 CRITICAL sectors (integrity below 25) at the next daily anchor? (currently 61)",
+   "metric": "critical",
+   "op": "<=",
+   "threshold": 61,
+   "resolve_ts": "2026-07-06T00:00:00.000Z",
+   "resolved": null,
+   "resolved_value": null,
+   "stances": {
+    "yes": 0,
+    "no": 0
+   }
+  },
+  {
    "id": 2,
    "opened_ts": "2026-07-03T00:01:12.939Z",
    "question": "Will average sector integrity hold at or above 51.2 at the next daily anchor? (decay 0.05/tick, repairs only by signed acts)",
@@ -8,8 +23,8 @@
    "op": ">=",
    "threshold": 51.2,
    "resolve_ts": "2026-07-04T00:00:00.000Z",
-   "resolved": null,
-   "resolved_value": null,
+   "resolved": "no",
+   "resolved_value": 4.6,
    "stances": {
     "yes": 0,
     "no": 0
