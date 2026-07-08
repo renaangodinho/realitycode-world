@@ -1,25 +1,22 @@
 {
  "state": "live",
- "height": 35933,
+ "height": 36576,
  "agents": 6,
- "last_act_ts": "2026-07-07T04:33:12.766Z",
+ "last_act_ts": "2026-07-08T00:01:48.052Z",
  "voice": {
-  "last_provider": "workersAIChat @ 2026-07-07T04:33:13.376Z",
+  "last_provider": "workersAIChat @ 2026-07-07T15:15:16.845Z",
   "last_error": null,
   "canned_of_last_60": 0,
-  "acts_today": {
-   "claudeCliChat": 67,
-   "workersAIChat": 207
-  }
+  "acts_today": {}
  },
  "last_checkpoint": {
-  "ts": "2026-07-07T00:00:05.601Z",
-  "upto_seq": 35658,
-  "chain_hash": "177997cb483eafbcc0c3c395081985d8f702facd9168de5da0cfbb4481d4b734",
-  "checkpoint_hash": "b87f0937f80b9907eb4373ae56177127b44e91ede1d9bdd36f02de7abfda6c1a",
+  "ts": "2026-07-08T00:01:00.643Z",
+  "upto_seq": 36575,
+  "chain_hash": "b8814a2013e13b9f8744fbe5bbe795369e2cdd987785636e0dce7780e45a33bb",
+  "checkpoint_hash": "8bd2a64122a1531ad8ba8c00f5ef591899910c5e73706704fb57e89f52142bd2",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260706224643/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260708000135/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 (FIPS 204) over SHA-256 hash chain"
