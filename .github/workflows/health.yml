@@ -1,7 +1,13 @@
 name: health
-# Probes the world's voice + liveness every 30 min. A FAILED run emails the repo
-# owner (default GitHub notification) — this is the alarm that was missing during
-# the 17-day flat-voice outage of June 2026.
+# Probes the world every 30 min. A FAILED run emails the repo owner — this is the
+# alarm that was missing during the 17-day flat-voice outage of June 2026.
+#
+# 2026-07-08 semantics (poll-based bridge era): the world speaks ONLY while the
+# owner's PC polls the worker (voice.bridge.online). PC off => quiet ticks by
+# design — NOT an outage, so "no recent act" alone must never page. What still
+# pages: dead status endpoint, state!=live, a stale daily checkpoint (>26h),
+# canned filler appearing on the ledger, and the one real voice failure mode —
+# bridge online for 30+ min with no Fable act in over an hour.
 on:
   schedule:
     - cron: '*/30 * * * *'
@@ -10,20 +16,40 @@ jobs:
   health:
     runs-on: ubuntu-latest
     steps:
-      - name: probe voice + liveness
+      - name: probe liveness + voice
         run: |
           s=$(curl -sf https://realitycode-genesis.synauradev.workers.dev/api/status) || { echo "::error::status endpoint unreachable"; exit 1; }
-          echo "$s" | jq '{state, height, last_act_ts, voice}'
+          echo "$s" | jq '{state, height, last_act_ts, voice: {mode: .voice.mode, bridge: .voice.bridge, last_provider: .voice.last_provider, canned: .voice.canned_of_last_60}}'
           state=$(echo "$s" | jq -r .state)
-          last=$(echo "$s" | jq -r .last_act_ts)
           canned=$(echo "$s" | jq -r '.voice.canned_of_last_60 // 0')
-          prov=$(echo "$s" | jq -r '.voice.last_provider // "none"')
           err=$(echo "$s" | jq -r '.voice.last_error // ""')
           now=$(date -u +%s)
-          lastep=$(date -u -d "$last" +%s 2>/dev/null || echo 0)
-          age=$(( now - lastep ))
           [ "$state" = "live" ] || { echo "::error::state=$state"; exit 1; }
-          [ "$age" -lt 600 ] || { echo "::error::world STALLED — last act ${age}s ago"; exit 1; }
-          [ "$canned" -le 20 ] || { echo "::error::voice DEGRADED — canned share $canned/60 (last_error: $err)"; exit 1; }
-          case "$prov" in deterministic*) echo "::error::voice=deterministic (canned engine)"; exit 1;; esac
-          echo "OK: voice=$prov canned=$canned/60 age=${age}s"
+          # daily checkpoint must keep landing whether or not the PC is on
+          cpts=$(echo "$s" | jq -r '.last_checkpoint.ts // empty')
+          cpep=$(date -u -d "$cpts" +%s 2>/dev/null || echo 0)
+          [ $(( now - cpep )) -lt 93600 ] || { echo "::error::daily checkpoint STALE — last at $cpts"; exit 1; }
+          # canned filler is never routine anymore (ALLOW_CANNED is an explicit emergency mode)
+          [ "$canned" -le 5 ] || { echo "::error::canned filler on the ledger — $canned/60 (last_error: $err)"; exit 1; }
+          online=$(echo "$s" | jq -r '.voice.bridge.online // false')
+          if [ "$online" != "true" ]; then
+            echo "OK: idle — pc offline (quiet by owner decision 2026-07-08); checkpoint fresh, no canned"
+            exit 0
+          fi
+          # bridge is online: after a 30-min grace (PC may have just woken), a Fable
+          # act must have landed within the last hour or the voice pipeline is broken
+          osince=$(echo "$s" | jq -r '.voice.bridge.online_since // empty')
+          osep=$(date -u -d "$osince" +%s 2>/dev/null || echo "$now")
+          if [ $(( now - osep )) -lt 1800 ]; then
+            echo "OK: bridge just came online ($osince) — grace period"
+            exit 0
+          fi
+          prov=$(echo "$s" | jq -r '.voice.last_provider // ""')
+          case "$prov" in
+            claudeCliChat*) ;;
+            *) echo "::error::bridge online since $osince but last voice is '$prov' — no Fable act this stretch (last_error: $err)"; exit 1;;
+          esac
+          fts=$(echo "$s" | jq -r '.voice.last_provider' | sed 's/^claudeCliChat @ //')
+          fep=$(date -u -d "$fts" +%s 2>/dev/null || echo 0)
+          [ $(( now - fep )) -lt 3600 ] || { echo "::error::bridge online since $osince but last Fable act was $fts (last_error: $err)"; exit 1; }
+          echo "OK: voice=fable-bridge, last act $fts, canned=$canned/60"
