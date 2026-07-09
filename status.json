@@ -1,22 +1,30 @@
 {
  "state": "live",
- "height": 36576,
+ "height": 36663,
  "agents": 6,
- "last_act_ts": "2026-07-08T00:01:48.052Z",
+ "last_act_ts": "2026-07-09T04:30:32.885Z",
  "voice": {
-  "last_provider": "workersAIChat @ 2026-07-07T15:15:16.845Z",
+  "mode": "fable-bridge",
+  "bridge": {
+   "online": true,
+   "last_poll": "2026-07-09T04:31:55.761Z",
+   "online_since": "2026-07-08T21:55:05.300Z"
+  },
+  "last_provider": "claudeCliChat @ 2026-07-09T04:30:33.195Z",
   "last_error": null,
   "canned_of_last_60": 0,
-  "acts_today": {}
+  "acts_today": {
+   "claudeCliChat": 59
+  }
  },
  "last_checkpoint": {
-  "ts": "2026-07-08T00:01:00.643Z",
-  "upto_seq": 36575,
-  "chain_hash": "b8814a2013e13b9f8744fbe5bbe795369e2cdd987785636e0dce7780e45a33bb",
-  "checkpoint_hash": "8bd2a64122a1531ad8ba8c00f5ef591899910c5e73706704fb57e89f52142bd2",
+  "ts": "2026-07-09T00:00:31.508Z",
+  "upto_seq": 36604,
+  "chain_hash": "567766c4526bec3bc280d1f563be287b7fce9b202f71f36438fd21b7242f9c82",
+  "checkpoint_hash": "65f84e273691a52603d4f6ca2f5e7c1ef9440188c12f63099c5acf36f358976f",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260708000135/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260709000106/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 (FIPS 204) over SHA-256 hash chain"
