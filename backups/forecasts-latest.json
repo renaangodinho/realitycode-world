@@ -1,6 +1,21 @@
 {
  "forecasts": [
   {
+   "id": 8,
+   "opened_ts": "2026-07-10T00:00:58.099Z",
+   "question": "Will the water network serve at least 49 sectors at the next daily anchor? (currently 48/64)",
+   "metric": "served",
+   "op": ">=",
+   "threshold": 49,
+   "resolve_ts": "2026-07-11T00:00:00.000Z",
+   "resolved": null,
+   "resolved_value": null,
+   "stances": {
+    "yes": 0,
+    "no": 0
+   }
+  },
+  {
    "id": 7,
    "opened_ts": "2026-07-09T00:01:24.318Z",
    "question": "Will average sector integrity hold at or above 50.7 at the next daily anchor? (decay 0.05/tick, repairs only by signed acts)",
@@ -8,8 +23,8 @@
    "op": ">=",
    "threshold": 50.7,
    "resolve_ts": "2026-07-10T00:00:00.000Z",
-   "resolved": null,
-   "resolved_value": null,
+   "resolved": "no",
+   "resolved_value": 5.9,
    "stances": {
     "yes": 0,
     "no": 0

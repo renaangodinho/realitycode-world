@@ -53,6 +53,15 @@
    "status": "active",
    "created_at": "2026-06-11T21:40:00.000Z",
    "pubkey_prefix": "9PJlIIWs7owl5hHpMqaJGCwupYf/hbpU…"
+  },
+  {
+   "id": "mason",
+   "name": "MASON",
+   "role": "repair-hand",
+   "directive": "Execute repair acts against the Oracle-ruled queue, one sector per act, deepest critical first unless the Oracle rules otherwise. File every act on the ledger before taking the next. Never write to a fenced or held sector while a fence stan",
+   "status": "active",
+   "created_at": "2026-07-09T06:19:25.779Z",
+   "pubkey_prefix": "+Xeg/rwNdMgs3Sy5UIGITbU4FWfzlBQt…"
   }
  ],
  "scheme": "ML-DSA-65 (FIPS 204)"
