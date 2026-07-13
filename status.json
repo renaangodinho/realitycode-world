@@ -1,30 +1,28 @@
 {
  "state": "live",
- "height": 37130,
+ "height": 37282,
  "agents": 7,
- "last_act_ts": "2026-07-12T04:04:04.179Z",
+ "last_act_ts": "2026-07-13T00:01:26.358Z",
  "voice": {
   "mode": "fable-bridge",
   "bridge": {
    "online": true,
-   "last_poll": "2026-07-12T04:07:08.870Z",
-   "online_since": "2026-07-11T06:25:18.642Z"
+   "last_poll": "2026-07-13T04:09:20.665Z",
+   "online_since": "2026-07-12T21:32:50.663Z"
   },
-  "last_provider": "claudeCliChat @ 2026-07-12T04:04:04.545Z",
-  "last_error": "2026-07-11T21:03:30.768Z bridge[veyra]: timeout 250000ms (tree-killed)",
+  "last_provider": "claudeCliChat @ 2026-07-12T14:38:54.338Z",
+  "last_error": "2026-07-13T04:06:54.517Z bridge[mason]: claude exit 1: You're out of usage credits · resets Jul 16, 6pm (America/Chicago)\n",
   "canned_of_last_60": 0,
-  "acts_today": {
-   "claudeCliChat": 62
-  }
+  "acts_today": {}
  },
  "last_checkpoint": {
-  "ts": "2026-07-12T00:00:26.020Z",
-  "upto_seq": 37067,
-  "chain_hash": "f37e37f24127b95880d30758b2ba862fcfea3520b5858c784369ec08d2003d91",
-  "checkpoint_hash": "32c98844c50bdd3ef07690621a3bd2616ca0e781acc0166ddf772eb2346cb9ad",
+  "ts": "2026-07-13T00:00:47.278Z",
+  "upto_seq": 37281,
+  "chain_hash": "5cd367c6c99d9af8ac1b079d5395cde2a7ba123155c9ed92b66d9f61b0a08bc0",
+  "checkpoint_hash": "528ee989f49c1cd3359aebe595b221d29d6179b6c9f99cd79972d2e1b0317ed1",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260712000047/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260713000107/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 (FIPS 204) over SHA-256 hash chain"
