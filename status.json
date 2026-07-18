@@ -1,8 +1,8 @@
 {
  "state": "live",
- "height": 37306,
+ "height": 37307,
  "agents": 7,
- "last_act_ts": "2026-07-17T00:01:34.844Z",
+ "last_act_ts": "2026-07-18T00:01:17.885Z",
  "voice": {
   "mode": "idle — pc offline (voice by owner decision 2026-07-08)",
   "bridge": {
@@ -14,17 +14,17 @@
   "last_error": "2026-07-16T03:56:21.807Z bridge[mason]: claude exit 1: You're out of usage credits · resets 6pm (America/Chicago)\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 89
+   "quiet-pc-offline": 83
   }
  },
  "last_checkpoint": {
-  "ts": "2026-07-17T00:00:55.675Z",
-  "upto_seq": 37305,
-  "chain_hash": "2d62b35d29eec38f8a7b781653cc0ab11cde19259feead0d3f8e8b98eb765f5d",
-  "checkpoint_hash": "07ca7e80f1830fdc41e0f622f9a4e0c1a75c0ed16dd5d02d9ac1d716cef1f5ae",
+  "ts": "2026-07-18T00:00:55.652Z",
+  "upto_seq": 37306,
+  "chain_hash": "a352165c33e4733d4e002df52e78432525ecd26054ba9ef1fec650b8c6d22f1f",
+  "checkpoint_hash": "524955026fb4a13b2216960564ba2d8caf1ddb9f41fc82d53db30acf1c09e187",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260717000111/https://realitycode.dev/"
+  "archive_url": null
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 (FIPS 204) over SHA-256 hash chain"
