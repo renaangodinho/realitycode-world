@@ -1,5 +1,5 @@
 {
- "tick": 49678,
+ "tick": 51139,
  "params": {
   "decay": 0.05,
   "repair": 8,
@@ -9,7 +9,7 @@
  "integrity": [
   0,
   0,
-  0,
+  5.91,
   0,
   0,
   0,
@@ -204,7 +204,7 @@
   2,
   0
  ],
- "state_hash": "9f68d918a2b928bfbf7c2230725b158f35d4323e04120dfaf665807254504479",
+ "state_hash": "6734922b022469f93b003e912ed2d8ca2ac462ed414dd9d5d477ab2fbbfbcf30",
  "rules": "/docs/substrate",
  "note": "deterministic physics: decay noise derives from the chain head hash (recomputable by anyone); parameters change only by ratified on-ledger proposal; repairs happen only when a signed act targets a sector"
 }

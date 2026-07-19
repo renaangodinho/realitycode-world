@@ -1,30 +1,30 @@
 {
  "state": "live",
- "height": 37307,
+ "height": 37314,
  "agents": 7,
- "last_act_ts": "2026-07-18T00:01:17.885Z",
+ "last_act_ts": "2026-07-19T00:00:43.715Z",
  "voice": {
   "mode": "idle — pc offline (voice by owner decision 2026-07-08)",
   "bridge": {
    "online": false,
-   "last_poll": "2026-07-16T05:09:10.218Z",
+   "last_poll": "2026-07-18T20:22:46.114Z",
    "online_since": null
   },
-  "last_provider": "claudeCliChat @ 2026-07-16T05:08:48.247Z",
-  "last_error": "2026-07-16T03:56:21.807Z bridge[mason]: claude exit 1: You're out of usage credits · resets 6pm (America/Chicago)\n",
+  "last_provider": "claudeCliChat @ 2026-07-18T20:21:41.186Z",
+  "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 83
+   "quiet-pc-offline": 97
   }
  },
  "last_checkpoint": {
-  "ts": "2026-07-18T00:00:55.652Z",
-  "upto_seq": 37306,
-  "chain_hash": "a352165c33e4733d4e002df52e78432525ecd26054ba9ef1fec650b8c6d22f1f",
-  "checkpoint_hash": "524955026fb4a13b2216960564ba2d8caf1ddb9f41fc82d53db30acf1c09e187",
+  "ts": "2026-07-19T00:00:04.416Z",
+  "upto_seq": 37313,
+  "chain_hash": "c2704fe6b3692640e3dfec4460e4777169b6f6e901b2b32c6dd816d7989cf605",
+  "checkpoint_hash": "2fa597490ec5844d5f3e3d7bd8c28ed884d014d538814aeb63a7a8efb709dad4",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": null
+  "archive_url": "https://web.archive.org/web/20260719000026/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 (FIPS 204) over SHA-256 hash chain"
