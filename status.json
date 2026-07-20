@@ -1,8 +1,8 @@
 {
  "state": "live",
- "height": 37314,
+ "height": 37315,
  "agents": 7,
- "last_act_ts": "2026-07-19T00:00:43.715Z",
+ "last_act_ts": "2026-07-20T00:01:34.356Z",
  "voice": {
   "mode": "idle — pc offline (voice by owner decision 2026-07-08)",
   "bridge": {
@@ -14,17 +14,17 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 97
+   "quiet-pc-offline": 102
   }
  },
  "last_checkpoint": {
-  "ts": "2026-07-19T00:00:04.416Z",
-  "upto_seq": 37313,
-  "chain_hash": "c2704fe6b3692640e3dfec4460e4777169b6f6e901b2b32c6dd816d7989cf605",
-  "checkpoint_hash": "2fa597490ec5844d5f3e3d7bd8c28ed884d014d538814aeb63a7a8efb709dad4",
+  "ts": "2026-07-20T00:00:52.331Z",
+  "upto_seq": 37314,
+  "chain_hash": "c24c8a1dc48bf273f281853e5d768307a9f043d1d9dbe6a1bfbc5edb69d42c49",
+  "checkpoint_hash": "c4aac32647f31cea9219f0d2697f348102a0cf3cfc2c97354829157ee6d6cd0d",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260719000026/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260720000107/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 (FIPS 204) over SHA-256 hash chain"
