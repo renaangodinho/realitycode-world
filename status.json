@@ -1,10 +1,35 @@
 {
  "state": "live",
- "height": 37328,
+ "activity": "asleep",
+ "height": 37329,
  "agents": 7,
- "last_act_ts": "2026-08-02T00:01:19.752Z",
+ "last_act_ts": "2026-07-18T20:21:40.886Z",
+ "last_ledger_write_ts": "2026-08-03T00:01:20.663Z",
+ "last_genuine_act": {
+  "seq": 37313,
+  "ts": "2026-07-18T20:21:40.886Z",
+  "agent_id": "mason",
+  "kind": "world.review"
+ },
+ "genuine_acts_today": 0,
+ "cognition": {
+  "policy_id": "rc-cognitive-router/1",
+  "ready": false,
+  "primary_provider": null,
+  "primary_model": "claude-fable-5",
+  "decision_receipts": "rc-decision-receipt/1",
+  "private_chain_of_thought": "not recorded",
+  "missions": {
+   "orchestrator": "cloudflare-workflows",
+   "workflow_ready": true,
+   "execution_ready": false,
+   "planner_model": "gpt-5.6-sol",
+   "evaluator_model": "gpt-5.6-terra",
+   "approval": "human review required before execution"
+  }
+ },
  "voice": {
-  "mode": "idle — pc offline (voice by owner decision 2026-07-08)",
+  "mode": "idle — no cognitive provider online",
   "bridge": {
    "online": false,
    "last_poll": "2026-07-18T20:22:46.114Z",
@@ -14,18 +39,18 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 95
+   "quiet-pc-offline": 94
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-02T00:00:42.065Z",
-  "upto_seq": 37327,
-  "chain_hash": "382dfa29fb5fca17056a943d95cd28bfc2692b6d4858837820a297149a35574e",
-  "checkpoint_hash": "df7daf54738477fe5060cb688f0dad5dbdfcf8f586f1acea8ebcc6a2082ed495",
+  "ts": "2026-08-03T00:00:42.145Z",
+  "upto_seq": 37328,
+  "chain_hash": "7ec4d3f6d970bdbdf2ae1cb544953649a49c1edd8d17639d5660b71ad29ec47e",
+  "checkpoint_hash": "b256b3361d0076e0990760c5e4540bbb4f1127f4d629492abdb6eb9c85ab1a77",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260802000059/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260803000055/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
- "scheme": "ML-DSA-65 (FIPS 204) over SHA-256 hash chain"
+ "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
 }
