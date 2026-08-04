@@ -1,10 +1,10 @@
 {
  "state": "live",
  "activity": "asleep",
- "height": 37329,
+ "height": 37330,
  "agents": 7,
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-03T00:01:20.663Z",
+ "last_ledger_write_ts": "2026-08-04T00:01:02.109Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -13,18 +13,150 @@
  },
  "genuine_acts_today": 0,
  "cognition": {
-  "policy_id": "rc-cognitive-router/1",
+  "policy_id": "rc-model-fabric/1",
   "ready": false,
+  "readiness": {
+   "spec": "rc-execution-readiness/1",
+   "state": "blocked",
+   "execution_ready": false,
+   "consequential_execution_ready": false,
+   "providers": {
+    "openai": false,
+    "anthropic": false
+   },
+   "budget": {
+    "enabled": true,
+    "internal_daily_limit_usd": 25,
+    "outer_gateway_limit_usd": 30
+   },
+   "blockers": [
+    "gateway.funded",
+    "gateway.probed",
+    "provider.executable"
+   ],
+   "checks": [
+    {
+     "id": "provider.credentials",
+     "label": "At least one model credential is installed",
+     "passed": true,
+     "required": true,
+     "action": null
+    },
+    {
+     "id": "gateway.configured",
+     "label": "Cloudflare AI Gateway is configured",
+     "passed": true,
+     "required": true,
+     "action": null
+    },
+    {
+     "id": "gateway.authenticated",
+     "label": "Gateway authentication is declared enabled",
+     "passed": true,
+     "required": true,
+     "action": null
+    },
+    {
+     "id": "gateway.funded",
+     "label": "Unified billing has available balance",
+     "passed": false,
+     "required": true,
+     "action": "Add Cloudflare unified-billing balance or use governed BYOK credentials."
+    },
+    {
+     "id": "gateway.probed",
+     "label": "Both provider execution probes passed",
+     "passed": false,
+     "required": true,
+     "action": "Run successful OpenAI and Anthropic probes through the governed gateway."
+    },
+    {
+     "id": "budget.enabled",
+     "label": "Internal reserve-before-call budget is enabled",
+     "passed": true,
+     "required": true,
+     "action": null
+    },
+    {
+     "id": "provider.executable",
+     "label": "At least one provider is executable",
+     "passed": false,
+     "required": true,
+     "action": "Resolve the failed provider, gateway, funding, or probe checks."
+    },
+    {
+     "id": "workflow.bound",
+     "label": "Durable mission workflow is bound",
+     "passed": true,
+     "required": true,
+     "action": null
+    },
+    {
+     "id": "sandbox.ready",
+     "label": "No-network artifact sandbox is ready",
+     "passed": true,
+     "required": false,
+     "action": null
+    }
+   ],
+   "proof_boundary": "Readiness reports configured and probed controls. It is not a guarantee that an external provider will remain available."
+  },
   "primary_provider": null,
   "primary_model": "claude-fable-5",
+  "providers": {
+   "openai": {
+    "ready": false
+   },
+   "anthropic": {
+    "ready": false
+   },
+   "local_bridge": {
+    "ready": false
+   }
+  },
+  "budget": {
+   "spec": "rc-model-budget/1",
+   "enabled": true,
+   "currency": "USD",
+   "daily_limit_usd": 25,
+   "outer_gateway_limit_usd": 30,
+   "per_call_reserve_usd": 2,
+   "day_boundary": "UTC",
+   "enforcement": "reserve-before-call; fail-closed",
+   "day": "2026-08-04",
+   "calls": 0,
+   "reserved_usd": 0,
+   "estimated_actual_usd": 0,
+   "remaining_reservable_usd": 25
+  },
   "decision_receipts": "rc-decision-receipt/1",
   "private_chain_of_thought": "not recorded",
   "missions": {
    "orchestrator": "cloudflare-workflows",
    "workflow_ready": true,
    "execution_ready": false,
+   "consequential_execution_ready": false,
+   "artifact_sandbox": {
+    "spec": "rc-artifact-sandbox/1",
+    "ready": true,
+    "configured": true,
+    "binding": true,
+    "execution": "cloudflare-sandbox-run-code",
+    "languages": [
+     "javascript",
+     "typescript"
+    ],
+    "network": "deny",
+    "secrets_inside_sandbox": false,
+    "shell_available_to_models": false,
+    "cleanup": "destroy-after-step",
+    "max_source_bytes": 40000,
+    "max_input_bytes": 64000
+   },
+   "routing_policy": "cross-provider",
    "planner_model": "gpt-5.6-sol",
-   "evaluator_model": "gpt-5.6-terra",
+   "evaluator_model": "claude-opus-5",
+   "evaluator_independence": "staged",
    "approval": "human review required before execution"
   }
  },
@@ -39,17 +171,17 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 94
+   "quiet-pc-offline": 87
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-03T00:00:42.145Z",
-  "upto_seq": 37328,
-  "chain_hash": "7ec4d3f6d970bdbdf2ae1cb544953649a49c1edd8d17639d5660b71ad29ec47e",
-  "checkpoint_hash": "b256b3361d0076e0990760c5e4540bbb4f1127f4d629492abdb6eb9c85ab1a77",
+  "ts": "2026-08-04T00:00:22.549Z",
+  "upto_seq": 37329,
+  "chain_hash": "e7d0fd7be1f13184c0a844ad6ad0853ebeb8277de9ab7ec7dc1e959a82e54add",
+  "checkpoint_hash": "5a55e76a375be18cac483f57940c4073ee533c0310f67042647467fc6c2a98ab",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260803000055/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260804000046/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
