@@ -1,10 +1,10 @@
 {
  "state": "live",
  "activity": "asleep",
- "height": 37333,
+ "height": 37334,
  "agents": 7,
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-07T00:01:08.114Z",
+ "last_ledger_write_ts": "2026-08-08T00:00:59.104Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -123,7 +123,7 @@
    "per_call_reserve_usd": 2,
    "day_boundary": "UTC",
    "enforcement": "reserve-before-call; fail-closed",
-   "day": "2026-08-07",
+   "day": "2026-08-08",
    "calls": 0,
    "reserved_usd": 0,
    "estimated_actual_usd": 0,
@@ -171,14 +171,14 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 85
+   "quiet-pc-offline": 57
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-07T00:00:35.220Z",
-  "upto_seq": 37332,
-  "chain_hash": "33f692982eef889534ebeb7fa7dfe500eb2d8ede642495e06bbe7988be7a6a5a",
-  "checkpoint_hash": "1ee4bd9097fc8bd1bca7a8f20cead20ee674a1fb1dd19b3f00c6391451a4d853",
+  "ts": "2026-08-08T00:00:50.376Z",
+  "upto_seq": 37333,
+  "chain_hash": "1cad40dca08cfd531449d8c7ef2f25fbb4660ee54fd971361edce4aa3c26e4f8",
+  "checkpoint_hash": "c1d91cb14cdc5f2a744e5881e6d0131e5b1f3e7a32289abf3aab2548848773ed",
   "ots_status": "submitted",
   "btc_block": null,
   "archive_url": null
