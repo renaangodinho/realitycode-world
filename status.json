@@ -1,10 +1,10 @@
 {
  "state": "live",
  "activity": "asleep",
- "height": 37335,
+ "height": 37336,
  "agents": 7,
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-09T00:00:58.624Z",
+ "last_ledger_write_ts": "2026-08-10T00:01:14.579Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -123,7 +123,7 @@
    "per_call_reserve_usd": 2,
    "day_boundary": "UTC",
    "enforcement": "reserve-before-call; fail-closed",
-   "day": "2026-08-09",
+   "day": "2026-08-10",
    "calls": 0,
    "reserved_usd": 0,
    "estimated_actual_usd": 0,
@@ -175,13 +175,13 @@
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-09T00:00:50.358Z",
-  "upto_seq": 37334,
-  "chain_hash": "f1f123a1a5095d4a1fc5afc3fc632e75f4f366874494d64a11d6423bd527b7f7",
-  "checkpoint_hash": "bc21baf9abfba1f42fe78445a03c77f272d5e7755816f1f5c2be202f34af2d2d",
+  "ts": "2026-08-10T00:00:50.348Z",
+  "upto_seq": 37335,
+  "chain_hash": "453e8a24e7a5d5d43911111663c05c43f97f80ab1b6eb62e3adf59ffee6d4787",
+  "checkpoint_hash": "670529403c19033b1d9b6d79f90b17bc30aadae9013c54599a215889c1b15ac9",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": null
+  "archive_url": "https://web.archive.org/web/20260810000101/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
