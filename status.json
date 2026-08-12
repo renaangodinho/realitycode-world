@@ -1,10 +1,10 @@
 {
  "state": "live",
  "activity": "asleep",
- "height": 37337,
+ "height": 37338,
  "agents": 7,
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-11T00:01:21.826Z",
+ "last_ledger_write_ts": "2026-08-12T00:00:59.840Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -123,7 +123,7 @@
    "per_call_reserve_usd": 2,
    "day_boundary": "UTC",
    "enforcement": "reserve-before-call; fail-closed",
-   "day": "2026-08-11",
+   "day": "2026-08-12",
    "calls": 0,
    "reserved_usd": 0,
    "estimated_actual_usd": 0,
@@ -171,17 +171,17 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 61
+   "quiet-pc-offline": 73
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-11T00:00:44.494Z",
-  "upto_seq": 37336,
-  "chain_hash": "c6b9874986a23a051310bff00d575990cb6c682e66da604aab0d48ece736720e",
-  "checkpoint_hash": "f3bfba378e28109459bca9db15e1addd6c7c612bf533d20bb0ab0fd22f2aac83",
+  "ts": "2026-08-12T00:00:17.861Z",
+  "upto_seq": 37337,
+  "chain_hash": "e5b7de4329ae7726acf46b65ea1052c8e273f6b5ebab3854b5a18d80560ddc23",
+  "checkpoint_hash": "db2c435670f92c5f41dd1510c049106f8de36fcdc0b6ec3ed43878dcb2e7633c",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260811000059/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260812000037/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
