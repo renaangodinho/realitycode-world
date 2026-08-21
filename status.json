@@ -1,10 +1,23 @@
 {
  "state": "live",
- "activity": "asleep",
- "height": 37338,
+ "activity": "awake",
+ "height": 37347,
  "agents": 7,
+ "release": {
+  "spec": "rc-release/1",
+  "worker": {
+   "id": "90603ad6-6f0b-400e-95f6-09865c103365",
+   "tag": null,
+   "created_at": "2026-08-21T00:28:06.323155Z"
+  },
+  "verifier": {
+   "path": "/rc-ml-dsa.a3e199bc6c0fe550.js",
+   "sha256": "a3e199bc6c0fe55079938146a3a5497e9b4cc99245ca96402912d0c0e1b7b3c1",
+   "cache_identity": "content-sha256"
+  }
+ },
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-12T00:00:59.840Z",
+ "last_ledger_write_ts": "2026-08-21T00:01:34.132Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -14,75 +27,126 @@
  "genuine_acts_today": 0,
  "cognition": {
   "policy_id": "rc-model-fabric/1",
-  "ready": false,
+  "ready": true,
   "readiness": {
    "spec": "rc-execution-readiness/1",
-   "state": "blocked",
-   "execution_ready": false,
+   "state": "free-active",
+   "execution_ready": true,
    "consequential_execution_ready": false,
    "providers": {
     "openai": false,
-    "anthropic": false
+    "anthropic": false,
+    "workers_ai": true
+   },
+   "zero_spend": {
+    "enabled": true,
+    "paid_cloud_inference": false,
+    "paid_cloud_sandbox": false,
+    "free_cloud_role": "proof, workflow coordination, storage, verification, public evidence, and bounded Workers AI inference inside a 9,000-neuron internal ceiling",
+    "execution_role": "Cloudflare Workers AI free-allocation cognition plus deterministic minute evolution; paid providers and paid containers remain disabled"
    },
    "budget": {
-    "enabled": true,
-    "internal_daily_limit_usd": 25,
-    "outer_gateway_limit_usd": 30
+    "enabled": false,
+    "internal_daily_limit_usd": 0,
+    "outer_gateway_limit_usd": 0,
+    "outer_gateway_window_seconds": null,
+    "gateway_rate_limit_rpm": 0,
+    "gateway_controls_verified": false,
+    "workers_ai": {
+     "enabled": true,
+     "zero_spend_compatible": true,
+     "daily_limit_neurons": 9000,
+     "free_allocation_neurons": 10000,
+     "headroom_neurons": 1000,
+     "day_boundary": "UTC",
+     "enforcement": "atomic reserve-before-call; reservations are never released during the UTC day"
+    }
    },
-   "blockers": [
-    "gateway.funded",
-    "gateway.probed",
-    "provider.executable"
-   ],
+   "blockers": [],
    "checks": [
     {
-     "id": "provider.credentials",
-     "label": "At least one model credential is installed",
+     "id": "spend.zero",
+     "label": "Paid cloud execution is disabled",
      "passed": true,
      "required": true,
      "action": null
+    },
+    {
+     "id": "workers_ai.bound",
+     "label": "Cloudflare Workers AI free-allocation binding is active",
+     "passed": true,
+     "required": true,
+     "action": null
+    },
+    {
+     "id": "workers_ai.ceiling",
+     "label": "RealityCode reserves below 10,000 free neurons per UTC day",
+     "passed": true,
+     "required": true,
+     "action": null
+    },
+    {
+     "id": "provider.credentials",
+     "label": "At least one model credential is installed",
+     "passed": false,
+     "required": false,
+     "action": "Install a direct provider key or Cloudflare unified provider credential."
     },
     {
      "id": "gateway.configured",
      "label": "Cloudflare AI Gateway is configured",
-     "passed": true,
-     "required": true,
-     "action": null
+     "passed": false,
+     "required": false,
+     "action": "Configure the governed gateway account and gateway ID."
     },
     {
      "id": "gateway.authenticated",
      "label": "Gateway authentication is declared enabled",
+     "passed": false,
+     "required": false,
+     "action": "Enable AI Gateway authentication before unified billing."
+    },
+    {
+     "id": "gateway.spend_limited",
+     "label": "Gateway has a verified fixed $30 per 24-hour spend limit",
      "passed": true,
-     "required": true,
+     "required": false,
+     "action": null
+    },
+    {
+     "id": "gateway.rate_limited",
+     "label": "Gateway has a verified anti-burst request limit",
+     "passed": true,
+     "required": false,
      "action": null
     },
     {
      "id": "gateway.funded",
      "label": "Unified billing has available balance",
      "passed": false,
-     "required": true,
+     "required": false,
      "action": "Add Cloudflare unified-billing balance or use governed BYOK credentials."
     },
     {
      "id": "gateway.probed",
      "label": "Both provider execution probes passed",
      "passed": false,
-     "required": true,
+     "required": false,
      "action": "Run successful OpenAI and Anthropic probes through the governed gateway."
     },
     {
      "id": "budget.enabled",
      "label": "Internal reserve-before-call budget is enabled",
-     "passed": true,
-     "required": true,
-     "action": null
+     "passed": false,
+     "required": false,
+     "action": "Enable the internal model dollar budget."
     },
     {
      "id": "provider.executable",
-     "label": "At least one provider is executable",
-     "passed": false,
-     "required": true,
-     "action": "Resolve the failed provider, gateway, funding, or probe checks."
+     "label": "At least one governed provider is executable",
+     "passed": true,
+     "required": false,
+     "action": null
     },
     {
      "id": "workflow.bound",
@@ -94,15 +158,17 @@
     {
      "id": "sandbox.ready",
      "label": "No-network artifact sandbox is ready",
-     "passed": true,
+     "passed": false,
      "required": false,
-     "action": null
+     "action": "Use the free local runner; Cloudflare Sandbox requires a paid plan."
     }
    ],
-   "proof_boundary": "Readiness reports configured and probed controls. It is not a guarantee that an external provider will remain available."
+   "proof_boundary": "Paid providers and Cloudflare Sandbox remain disabled. RealityCode enforces a project-local Workers AI ceiling below the published daily free allocation; other account-level Workers AI usage remains outside this project ledger."
   },
-  "primary_provider": null,
-  "primary_model": "claude-fable-5",
+  "primary_provider": "cloudflare-workers-ai",
+  "primary_model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "configured_primary_model": "gpt-5.6-sol",
+  "executable_primary_model": "@cf/qwen/qwen3-30b-a3b-fp8",
   "providers": {
    "openai": {
     "ready": false
@@ -110,37 +176,43 @@
    "anthropic": {
     "ready": false
    },
+   "workers_ai": {
+    "ready": true,
+    "allocation": "free-capped"
+   },
    "local_bridge": {
     "ready": false
    }
   },
   "budget": {
-   "spec": "rc-model-budget/1",
+   "spec": "rc-workers-ai-budget/1",
    "enabled": true,
-   "currency": "USD",
-   "daily_limit_usd": 25,
-   "outer_gateway_limit_usd": 30,
-   "per_call_reserve_usd": 2,
+   "zero_spend_compatible": true,
+   "daily_limit_neurons": 9000,
+   "free_allocation_neurons": 10000,
+   "headroom_neurons": 1000,
    "day_boundary": "UTC",
-   "enforcement": "reserve-before-call; fail-closed",
-   "day": "2026-08-12",
-   "calls": 0,
-   "reserved_usd": 0,
-   "estimated_actual_usd": 0,
-   "remaining_reservable_usd": 25
+   "enforcement": "atomic reserve-before-call; reservations are never released during the UTC day",
+   "day": "2026-08-21",
+   "calls": 136,
+   "reserved_neurons": 3629.269,
+   "provider_reported_neurons": 840.909,
+   "remaining_reservable_neurons": 5370.731,
+   "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+   "pricing_verified_at": "2026-08-20"
   },
   "decision_receipts": "rc-decision-receipt/1",
   "private_chain_of_thought": "not recorded",
   "missions": {
    "orchestrator": "cloudflare-workflows",
    "workflow_ready": true,
-   "execution_ready": false,
+   "execution_ready": true,
    "consequential_execution_ready": false,
    "artifact_sandbox": {
     "spec": "rc-artifact-sandbox/1",
-    "ready": true,
-    "configured": true,
-    "binding": true,
+    "ready": false,
+    "configured": false,
+    "binding": false,
     "execution": "cloudflare-sandbox-run-code",
     "languages": [
      "javascript",
@@ -153,15 +225,15 @@
     "max_source_bytes": 40000,
     "max_input_bytes": 64000
    },
-   "routing_policy": "cross-provider",
-   "planner_model": "gpt-5.6-sol",
-   "evaluator_model": "claude-opus-5",
-   "evaluator_independence": "staged",
+   "routing_policy": "free-allocation",
+   "planner_model": "@cf/qwen/qwen3-30b-a3b-fp8",
+   "evaluator_model": "@cf/zai-org/glm-4.7-flash",
+   "evaluator_independence": "model-separated",
    "approval": "human review required before execution"
   }
  },
  "voice": {
-  "mode": "idle — no cognitive provider online",
+  "mode": "workers-ai minute evolution",
   "bridge": {
    "online": false,
    "last_poll": "2026-07-18T20:22:46.114Z",
@@ -171,17 +243,18 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 73
+   "workers-ai-pulse": 128,
+   "quiet-pc-offline": 49
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-12T00:00:17.861Z",
-  "upto_seq": 37337,
-  "chain_hash": "e5b7de4329ae7726acf46b65ea1052c8e273f6b5ebab3854b5a18d80560ddc23",
-  "checkpoint_hash": "db2c435670f92c5f41dd1510c049106f8de36fcdc0b6ec3ed43878dcb2e7633c",
+  "ts": "2026-08-21T00:00:41.879Z",
+  "upto_seq": 37346,
+  "chain_hash": "4486ce70985aec274f0502914d0a798e35353c9f7d63f3b5ebc9c9819b16ae5c",
+  "checkpoint_hash": "e2966ce91d3c3464009c0b64c8507e326a020827e1b691fb22103b0cb80397c8",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260812000037/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260821000115/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
