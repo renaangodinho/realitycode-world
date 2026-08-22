@@ -1,14 +1,14 @@
 {
  "state": "live",
  "activity": "awake",
- "height": 37347,
+ "height": 37348,
  "agents": 7,
  "release": {
   "spec": "rc-release/1",
   "worker": {
-   "id": "90603ad6-6f0b-400e-95f6-09865c103365",
+   "id": "bc782ce7-6b17-4055-84f6-17c6e030dc34",
    "tag": null,
-   "created_at": "2026-08-21T00:28:06.323155Z"
+   "created_at": "2026-08-21T16:11:15.971877Z"
   },
   "verifier": {
    "path": "/rc-ml-dsa.a3e199bc6c0fe550.js",
@@ -17,7 +17,7 @@
   }
  },
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-21T00:01:34.132Z",
+ "last_ledger_write_ts": "2026-08-22T00:00:47.264Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -56,10 +56,11 @@
      "enabled": true,
      "zero_spend_compatible": true,
      "daily_limit_neurons": 9000,
+     "mission_reserve_neurons": 6750,
      "free_allocation_neurons": 10000,
      "headroom_neurons": 1000,
      "day_boundary": "UTC",
-     "enforcement": "atomic reserve-before-call; reservations are never released during the UTC day"
+     "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day"
     }
    },
    "blockers": [],
@@ -166,9 +167,9 @@
    "proof_boundary": "Paid providers and Cloudflare Sandbox remain disabled. RealityCode enforces a project-local Workers AI ceiling below the published daily free allocation; other account-level Workers AI usage remains outside this project ledger."
   },
   "primary_provider": "cloudflare-workers-ai",
-  "primary_model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "primary_model": "@cf/meta/llama-3.1-8b-instruct-fast",
   "configured_primary_model": "gpt-5.6-sol",
-  "executable_primary_model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "executable_primary_model": "@cf/meta/llama-3.1-8b-instruct-fast",
   "providers": {
    "openai": {
     "ready": false
@@ -189,17 +190,18 @@
    "enabled": true,
    "zero_spend_compatible": true,
    "daily_limit_neurons": 9000,
+   "mission_reserve_neurons": 6750,
    "free_allocation_neurons": 10000,
    "headroom_neurons": 1000,
    "day_boundary": "UTC",
-   "enforcement": "atomic reserve-before-call; reservations are never released during the UTC day",
-   "day": "2026-08-21",
-   "calls": 136,
-   "reserved_neurons": 3629.269,
-   "provider_reported_neurons": 840.909,
-   "remaining_reservable_neurons": 5370.731,
+   "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day",
+   "day": "2026-08-22",
+   "calls": 6,
+   "reserved_neurons": 4744.139,
+   "provider_reported_neurons": 364.331,
+   "remaining_reservable_neurons": 4255.861,
    "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
-   "pricing_verified_at": "2026-08-20"
+   "pricing_verified_at": "2026-08-21"
   },
   "decision_receipts": "rc-decision-receipt/1",
   "private_chain_of_thought": "not recorded",
@@ -226,8 +228,8 @@
     "max_input_bytes": 64000
    },
    "routing_policy": "free-allocation",
-   "planner_model": "@cf/qwen/qwen3-30b-a3b-fp8",
-   "evaluator_model": "@cf/zai-org/glm-4.7-flash",
+   "planner_model": "@cf/meta/llama-3.1-8b-instruct-fast",
+   "evaluator_model": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
    "evaluator_independence": "model-separated",
    "approval": "human review required before execution"
   }
@@ -243,18 +245,18 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "workers-ai-pulse": 128,
-   "quiet-pc-offline": 49
+   "workers-ai-pulse": 2,
+   "quiet-pc-offline": 45
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-21T00:00:41.879Z",
-  "upto_seq": 37346,
-  "chain_hash": "4486ce70985aec274f0502914d0a798e35353c9f7d63f3b5ebc9c9819b16ae5c",
-  "checkpoint_hash": "e2966ce91d3c3464009c0b64c8507e326a020827e1b691fb22103b0cb80397c8",
+  "ts": "2026-08-22T00:00:05.054Z",
+  "upto_seq": 37347,
+  "chain_hash": "fdfc15c1c7ac61cd4637b05b932717e3711721e8d8c098441ad8154be8106c14",
+  "checkpoint_hash": "9bb0ec9aa04942a49a0d78f357e75d710025ad507f240ed53e11108dabcd59b6",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260821000115/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260822000025/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
