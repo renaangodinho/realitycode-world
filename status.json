@@ -1,7 +1,7 @@
 {
  "state": "live",
  "activity": "awake",
- "height": 37349,
+ "height": 37350,
  "agents": 7,
  "release": {
   "spec": "rc-release/1",
@@ -17,7 +17,7 @@
   }
  },
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-23T00:00:47.084Z",
+ "last_ledger_write_ts": "2026-08-24T00:00:46.617Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -195,11 +195,11 @@
    "headroom_neurons": 1000,
    "day_boundary": "UTC",
    "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day",
-   "day": "2026-08-23",
+   "day": "2026-08-24",
    "calls": 5,
-   "reserved_neurons": 8250.319,
-   "provider_reported_neurons": 230.061,
-   "remaining_reservable_neurons": 749.6810000000005,
+   "reserved_neurons": 4451.365,
+   "provider_reported_neurons": 240.63,
+   "remaining_reservable_neurons": 4548.635,
    "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
    "pricing_verified_at": "2026-08-21"
   },
@@ -245,18 +245,18 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "workers-ai-pulse": 1,
-   "quiet-pc-offline": 50
+   "workers-ai-pulse": 2,
+   "quiet-pc-offline": 53
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-23T00:00:05.177Z",
-  "upto_seq": 37348,
-  "chain_hash": "73c44793f76eff84db0bef3744a564fae224cabec06d349f856c2ba99f36c3af",
-  "checkpoint_hash": "8a970b94afc6e1e69be869ce206fed454a023b089ee8ddf6e1510c51108e3c38",
+  "ts": "2026-08-24T00:00:05.069Z",
+  "upto_seq": 37349,
+  "chain_hash": "0a8c62d6676920958ee51de4b27302df5393ee1edb658285fb0cc307c0643a65",
+  "checkpoint_hash": "657d361fc1d52fdfd7ce124fdc989374582d42c25b555cbc3805f60d57d9aac8",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260823000030/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260824000029/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
