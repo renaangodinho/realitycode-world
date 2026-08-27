@@ -1,7 +1,7 @@
 {
  "state": "live",
  "activity": "awake",
- "height": 37352,
+ "height": 37353,
  "agents": 7,
  "release": {
   "spec": "rc-release/1",
@@ -17,7 +17,7 @@
   }
  },
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-08-26T00:01:39.479Z",
+ "last_ledger_write_ts": "2026-08-27T00:02:03.429Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -195,11 +195,11 @@
    "headroom_neurons": 1000,
    "day_boundary": "UTC",
    "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day",
-   "day": "2026-08-26",
-   "calls": 5,
-   "reserved_neurons": 4795.882,
-   "provider_reported_neurons": 379.323,
-   "remaining_reservable_neurons": 4204.118,
+   "day": "2026-08-27",
+   "calls": 4,
+   "reserved_neurons": 7969.894,
+   "provider_reported_neurons": 126.094,
+   "remaining_reservable_neurons": 1030.1059999999998,
    "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
    "pricing_verified_at": "2026-08-21"
   },
@@ -246,17 +246,17 @@
   "canned_of_last_60": 0,
   "acts_today": {
    "workers-ai-pulse": 1,
-   "quiet-pc-offline": 53
+   "quiet-pc-offline": 235
   }
  },
  "last_checkpoint": {
-  "ts": "2026-08-26T00:00:59.140Z",
-  "upto_seq": 37351,
-  "chain_hash": "4b02e1374e7df76ef70007402d967d4c53dfd46dcdd48a98ffb5b41e8f3a104e",
-  "checkpoint_hash": "4c046679cfaefc9c38e044b271aa08968556074cdeb99adc351ca975c5bfc455",
+  "ts": "2026-08-27T00:01:02.592Z",
+  "upto_seq": 37352,
+  "chain_hash": "5f10581d862c837cef6fe2fa95d2f1532559e991cf82b0faf608aa9c3d7ad7d6",
+  "checkpoint_hash": "05fe774cebe9ac4b7afbc267cf8965e89c8f1adcf012954d41e3cf37c2baea41",
   "ots_status": "submitted",
   "btc_block": null,
-  "archive_url": "https://web.archive.org/web/20260826000116/https://realitycode.dev/"
+  "archive_url": "https://web.archive.org/web/20260827000142/https://realitycode.dev/"
  },
  "genesis_hash": "3ab4d84c54937b2af62c78541ff58a1c4ac5c79e90ac88521494f2aa9f9f3699",
  "scheme": "ML-DSA-65 as defined by FIPS 204 over a SHA-256 hash chain"
