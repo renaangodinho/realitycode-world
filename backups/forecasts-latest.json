@@ -1,6 +1,21 @@
 {
  "forecasts": [
   {
+   "id": 62,
+   "opened_ts": "2026-09-02T00:01:14.659Z",
+   "question": "Will there be at most 63 CRITICAL sectors (integrity below 25) at the next daily anchor? (currently 64)",
+   "metric": "critical",
+   "op": "<=",
+   "threshold": 63,
+   "resolve_ts": "2026-09-03T00:00:00.000Z",
+   "resolved": null,
+   "resolved_value": null,
+   "stances": {
+    "yes": 0,
+    "no": 0
+   }
+  },
+  {
    "id": 61,
    "opened_ts": "2026-09-01T00:01:50.972Z",
    "question": "Will the water network serve at least 54 sectors at the next daily anchor? (currently 53/64)",
@@ -8,8 +23,8 @@
    "op": ">=",
    "threshold": 54,
    "resolve_ts": "2026-09-02T00:00:00.000Z",
-   "resolved": null,
-   "resolved_value": null,
+   "resolved": "no",
+   "resolved_value": 53,
    "stances": {
     "yes": 0,
     "no": 0
@@ -100,21 +115,6 @@
    "resolve_ts": "2026-08-27T00:00:00.000Z",
    "resolved": "no",
    "resolved_value": 64,
-   "stances": {
-    "yes": 0,
-    "no": 0
-   }
-  },
-  {
-   "id": 54,
-   "opened_ts": "2026-08-25T00:02:00.480Z",
-   "question": "Will the water network serve at least 54 sectors at the next daily anchor? (currently 53/64)",
-   "metric": "served",
-   "op": ">=",
-   "threshold": 54,
-   "resolve_ts": "2026-08-26T00:00:00.000Z",
-   "resolved": "no",
-   "resolved_value": 53,
    "stances": {
     "yes": 0,
     "no": 0
