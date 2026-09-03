@@ -1,7 +1,7 @@
 {
  "state": "live",
  "activity": "awake",
- "height": 37359,
+ "height": 37360,
  "agents": 7,
  "release": {
   "spec": "rc-release/1",
@@ -17,7 +17,7 @@
   }
  },
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-09-02T00:01:10.626Z",
+ "last_ledger_write_ts": "2026-09-03T00:01:10.479Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -195,11 +195,11 @@
    "headroom_neurons": 1000,
    "day_boundary": "UTC",
    "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day",
-   "day": "2026-09-02",
-   "calls": 4,
-   "reserved_neurons": 8502.176,
-   "provider_reported_neurons": 229.274,
-   "remaining_reservable_neurons": 497.8240000000005,
+   "day": "2026-09-03",
+   "calls": 3,
+   "reserved_neurons": 4479.302,
+   "provider_reported_neurons": 227.927,
+   "remaining_reservable_neurons": 4520.698,
    "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
    "pricing_verified_at": "2026-08-21"
   },
@@ -245,14 +245,14 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 114
+   "quiet-pc-offline": 112
   }
  },
  "last_checkpoint": {
-  "ts": "2026-09-02T00:00:59.301Z",
-  "upto_seq": 37358,
-  "chain_hash": "02041bac8eead1608a61e08fb159c43f716b857eb0f491cb91d323ac22c5196b",
-  "checkpoint_hash": "acbc01872fe234d6e608366f2b697a9bd0347a34d287e1c24489fe40c913d736",
+  "ts": "2026-09-03T00:00:59.704Z",
+  "upto_seq": 37359,
+  "chain_hash": "cacd46c290e29bad25d81db580c97de928367c0122fcffc2fc642f9641e5f36f",
+  "checkpoint_hash": "97df7fec845db0fc893595f0153d86887e341f4dae262d4edfc9e0456280fb71",
   "ots_status": "submitted",
   "btc_block": null,
   "archive_url": null
