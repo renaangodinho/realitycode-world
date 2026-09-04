@@ -1,7 +1,7 @@
 {
  "state": "live",
  "activity": "awake",
- "height": 37360,
+ "height": 37361,
  "agents": 7,
  "release": {
   "spec": "rc-release/1",
@@ -17,7 +17,7 @@
   }
  },
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-09-03T00:01:10.479Z",
+ "last_ledger_write_ts": "2026-09-04T00:01:10.101Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -195,11 +195,11 @@
    "headroom_neurons": 1000,
    "day_boundary": "UTC",
    "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day",
-   "day": "2026-09-03",
-   "calls": 3,
-   "reserved_neurons": 4479.302,
-   "provider_reported_neurons": 227.927,
-   "remaining_reservable_neurons": 4520.698,
+   "day": "2026-09-04",
+   "calls": 4,
+   "reserved_neurons": 4885.565,
+   "provider_reported_neurons": 380.512,
+   "remaining_reservable_neurons": 4114.435,
    "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
    "pricing_verified_at": "2026-08-21"
   },
@@ -245,14 +245,14 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
-   "quiet-pc-offline": 112
+   "quiet-pc-offline": 110
   }
  },
  "last_checkpoint": {
-  "ts": "2026-09-03T00:00:59.704Z",
-  "upto_seq": 37359,
-  "chain_hash": "cacd46c290e29bad25d81db580c97de928367c0122fcffc2fc642f9641e5f36f",
-  "checkpoint_hash": "97df7fec845db0fc893595f0153d86887e341f4dae262d4edfc9e0456280fb71",
+  "ts": "2026-09-04T00:00:59.116Z",
+  "upto_seq": 37360,
+  "chain_hash": "49e20927f3b1ccecd4a0d0120eab1c8e89af1bd604b6bcc06ab77a660343dd1f",
+  "checkpoint_hash": "112f8f8bd2836e7fbd75e885561f731c5eace24b9d09b3209ad6f31e0ff21330",
   "ots_status": "submitted",
   "btc_block": null,
   "archive_url": null
