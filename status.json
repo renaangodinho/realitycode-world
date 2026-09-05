@@ -1,7 +1,7 @@
 {
  "state": "live",
  "activity": "awake",
- "height": 37361,
+ "height": 37362,
  "agents": 7,
  "release": {
   "spec": "rc-release/1",
@@ -17,7 +17,7 @@
   }
  },
  "last_act_ts": "2026-07-18T20:21:40.886Z",
- "last_ledger_write_ts": "2026-09-04T00:01:10.101Z",
+ "last_ledger_write_ts": "2026-09-05T00:00:42.687Z",
  "last_genuine_act": {
   "seq": 37313,
   "ts": "2026-07-18T20:21:40.886Z",
@@ -195,11 +195,11 @@
    "headroom_neurons": 1000,
    "day_boundary": "UTC",
    "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day",
-   "day": "2026-09-04",
-   "calls": 4,
-   "reserved_neurons": 4885.565,
-   "provider_reported_neurons": 380.512,
-   "remaining_reservable_neurons": 4114.435,
+   "day": "2026-09-05",
+   "calls": 6,
+   "reserved_neurons": 8387.425,
+   "provider_reported_neurons": 261.774,
+   "remaining_reservable_neurons": 612.5750000000007,
    "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
    "pricing_verified_at": "2026-08-21"
   },
@@ -245,14 +245,15 @@
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
   "acts_today": {
+   "workers-ai-pulse": 2,
    "quiet-pc-offline": 110
   }
  },
  "last_checkpoint": {
-  "ts": "2026-09-04T00:00:59.116Z",
-  "upto_seq": 37360,
-  "chain_hash": "49e20927f3b1ccecd4a0d0120eab1c8e89af1bd604b6bcc06ab77a660343dd1f",
-  "checkpoint_hash": "112f8f8bd2836e7fbd75e885561f731c5eace24b9d09b3209ad6f31e0ff21330",
+  "ts": "2026-09-05T00:00:31.847Z",
+  "upto_seq": 37361,
+  "chain_hash": "010a9e5227a1b53f269504a34cb1749d59c09050eac6ba9b2e1812254d18a588",
+  "checkpoint_hash": "d9a28cb7fc1ca68cf91a7edac0a8ef3768e61961fa0af107e48b0281e03ebb0c",
   "ots_status": "submitted",
   "btc_block": null,
   "archive_url": null
