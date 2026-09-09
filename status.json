@@ -195,11 +195,11 @@
    "headroom_neurons": 1000,
    "day_boundary": "UTC",
    "enforcement": "atomic reserve-before-call; ambient evolution preserves the protected mission reserve; provider-call reservations are never released during the UTC day",
-   "day": "2026-09-08",
-   "calls": 4,
-   "reserved_neurons": 7977.027,
-   "provider_reported_neurons": 116.019,
-   "remaining_reservable_neurons": 1022.973,
+   "day": "2026-09-09",
+   "calls": 0,
+   "reserved_neurons": 0,
+   "provider_reported_neurons": 0,
+   "remaining_reservable_neurons": 9000,
    "pricing_source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
    "pricing_verified_at": "2026-08-21"
   },
@@ -244,10 +244,7 @@
   "last_provider": "claudeCliChat @ 2026-07-18T20:21:41.186Z",
   "last_error": "2026-07-18T20:19:34.228Z bridge[kessel]: claude exit 1: API Error: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()\n",
   "canned_of_last_60": 0,
-  "acts_today": {
-   "workers-ai-pulse": 1,
-   "quiet-pc-offline": 119
-  }
+  "acts_today": {}
  },
  "last_checkpoint": {
   "ts": "2026-09-08T00:00:19.941Z",
